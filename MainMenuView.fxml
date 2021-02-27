@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="502.0" fitWidth="952.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../sprites/cave_home_screen.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <Pane fx:id="playButton" layoutX="204.0" layoutY="134.0" onMouseClicked="#playHandler" prefHeight="66.0" prefWidth="193.0">
+         <children>
+            <ImageView fitHeight="112.0" fitWidth="248.0" layoutX="-27.0" layoutY="-22.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../sprites/banner.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="playText" layoutX="84.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Play" wrappingWidth="25.01025390625" />
+         </children>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Pane>
+      <Pane fx:id="quitButton" layoutX="204.0" layoutY="270.0" onMouseClicked="#quitHandler" prefHeight="66.0" prefWidth="193.0">
+         <children>
+            <ImageView fitHeight="112.0" fitWidth="248.0" layoutX="-27.0" layoutY="-23.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../sprites/banner.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="quitText" layoutX="79.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quit" textAlignment="CENTER" wrappingWidth="35.01025390625" />
+         </children>
+      </Pane>
+      <Text fx:id="mainText" layoutX="270.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DUNGEON" />
+      <AnchorPane layoutX="201.0" layoutY="53.0" prefHeight="200.0" prefWidth="200.0" visible="false" />
+      <ScrollPane fx:id="anchorLevelSelect" hbarPolicy="NEVER" layoutX="201.0" layoutY="53.0" prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER" visible="false">
+        <content>
+          <AnchorPane layoutX="25.0">
+               <children>
+                  <ImageView fitHeight="300.0" fitWidth="200.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../sprites/cave_home_screen.png" />
+                     </image>
+                  </ImageView>
+                  <GridPane fx:id="grid" alignment="CENTER" layoutX="25.0" vgap="5.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</Pane>

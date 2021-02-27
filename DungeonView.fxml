@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="rootPane" onKeyPressed="#handleKeyPress" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <GridPane fx:id="squares" alignment="CENTER" onKeyPressed="#handleKeyPress" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints />
+        </rowConstraints>
+      </GridPane>
+   </center>
+   <left>
+      <Pane BorderPane.alignment="CENTER">
+         <children>
+            <GridPane alignment="CENTER" layoutX="-12.0" layoutY="51.0" prefHeight="153.0" prefWidth="180.0">
+              <columnConstraints>
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+              </rowConstraints>
+               <children>
+                  <ImageView fx:id="sword_indicator" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../../sprites/greatsword_1_new.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="treasure_indicator" fitHeight="35.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../../sprites/gold_pile.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="potion_indicator" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../../sprites/brilliant_blue_new.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="key_indicator" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../../sprites/key.png" />
+                     </image>
+                  </ImageView>
+                  <ProgressBar fx:id="swordHealth" prefHeight="20.0" prefWidth="88.0" progress="0.0" GridPane.columnIndex="1" />
+                  <ProgressBar fx:id="potionTime" prefHeight="20.0" prefWidth="88.0" progress="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Text fx:id="treasureCounter" strokeType="OUTSIDE" strokeWidth="0.0" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <Text fx:id="keyCounter" strokeType="OUTSIDE" strokeWidth="0.0" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+               </children>
+            </GridPane>
+            <Text layoutX="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory" y="40.0" />
+            <Button fx:id="exitButton" layoutX="28.0" layoutY="206.0" mnemonicParsing="false" onAction="#exitHandler" text="Exit" />
+            <Button fx:id="restartButton" layoutX="93.0" layoutY="206.0" mnemonicParsing="false" onAction="#restartHandle" text="Restart" />
+         </children>
+      </Pane>
+   </left>
+   <right>
+      <Pane BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="35.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Goals" />
+            <TextArea fx:id="goalsTextArea" layoutY="50.0" maxWidth="175.0" />
+            <StackPane fx:id="gameOverScreen" layoutX="15.0" layoutY="140.0" visible="false">
+               <children>
+                  <ImageView fitHeight="91.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../sprites/banner.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="gameOverText" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Dungeon Complete" textAlignment="CENTER" wrappingWidth="68.29769897460938" StackPane.alignment="TOP_CENTER">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                     <StackPane.margin>
+                        <Insets top="35.0" />
+                     </StackPane.margin>
+                  </Text>
+               </children>
+            </StackPane>
+         </children>
+      </Pane>
+   </right>
+   <top>
+      <Pane maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>
